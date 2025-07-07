@@ -100,3 +100,4 @@ DOSに戻るとこんな画面
 * [TX1310 M3のBIOSファームウェアをアップデート](https://paso.iroiro.jp/item/229.html)
 * [富士通 PRIMERGY TX1310 M3 BIOSアップデート完了](https://www.024m2.com/article/201905article_7.html)
 * [富士通PRIMERGYシリーズのBIOS/ファームウェアをアップデート！](https://minory.org/primergy-bios-update.html)
+* [LinuxからBIOSを書き換える](https://wiki.archlinux.jp/index.php/Linux_%E3%81%8B%E3%82%89_BIOS_%E3%82%92%E6%9B%B8%E3%81%8D%E6%8F%9B%E3%81%88%E3%82%8B)
