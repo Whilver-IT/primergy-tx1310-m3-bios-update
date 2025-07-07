@@ -50,7 +50,7 @@ BootさせたいUSBを挿入し、以下を実行
 ```
 書込完了後、再度fdiskで確認
 ```
-# fdisk /dev/sdX
+# fdisk -l
 ```
 このとき、書き込んだUSBに/dev/sdX1があることを確認し、マウント
 ```
