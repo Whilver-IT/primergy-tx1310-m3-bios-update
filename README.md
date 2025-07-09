@@ -1,13 +1,13 @@
-# PRIMERGY TX1310 m3 BIOS UPDATE
+# PRIMERGY TX1310 M3 BIOS UPDATE
 
 ## 1. 目的
 
-PRIMERGY TX1310 m3のBIOSをアップデートするのに手間取ったので、まとめておく
+PRIMERGY TX1310 M3のBIOSをアップデートするのに手間取ったので、まとめておく
 
 ## 2. ライセンスなど
 
 MITライセンスです  
-サンプルソースなど使用していただくのは構いませんが、いかなる責任も負いません  
+以下のコマンドなど使用していただくのは構いませんが、いかなる責任も負いません  
 すべて自己責任でお願いいたします
 
 ## 3. FreeDOSのBootable USBの作成
@@ -18,9 +18,10 @@ MITライセンスです
 
 ### 3-1. 準備
 
-[PRIMERGY BIOS/ファームウェア](https://jp.fujitsu.com/platform/server/primergy/bios/)のサイトから該当のモデルを選択し、オフラインアップデートツールをクリックし、  
-遷移した先のサイトから、「カートに入れず直接ダウンロードする」を選択後一番下までスクロールさせ、  
-「ファイルをダウンロードする」をクリック  
+[PRIMERGY BIOS/ファームウェア](https://jp.fujitsu.com/platform/server/primergy/bios/)のサイトから該当のモデルを選択  
+「オフラインアップデートツール」をクリック  
+遷移した先のサイトから、「カートに入れず直接ダウンロードする」をクリック  
+一番下までスクロールさせ、「ファイルをダウンロードする」をクリック  
 ダウンロードしたzipファイルを展開する  
 
 ### 3-2. WindowsでのBootable USBの作成
@@ -39,7 +40,7 @@ BootさせたいUSBを挿入し、以下を実行
 ```
 # fdisk -l
 ```
-で、対象となるUSBメモリを確認
+で、対象となるUSBメモリを確認し、以下を実行
 ```
 # dd if=/dev/zero of=/dev/sdX bs=1M status=progress
 ```
@@ -60,7 +61,7 @@ BootさせたいUSBを挿入し、以下を実行
 ```
 # cp -rp /xxxx/xxxx/xxxx/DOS /mnt
 ```
-コピーしたらアンマウント
+コピーしたらアンマウントして取り出し
 ```
 # umount /mnt
 ```
@@ -68,15 +69,14 @@ BootさせたいUSBを挿入し、以下を実行
 
 ## 4. Bootable USBの起動
 
-PRIMERGY TX1310 m3のBIOS画面を起動しAdvancedタブの  
-1. CSM ConfigurationのLaunch CSMをEnabledにして、現れた項目の値はすべてLegacy only
-2. USB ConfigurationのLegacy USB SupportがEnabledになっていることを確認
+PRIMERGY TX1310 M3のBIOS画面を起動しAdvancedタブの  
+1. 「CSM Configuration」の「Launch CSM」を「Enabled」にして、現れた項目の値はすべて「Legacy only」
+2. 「USB Configuration」の「Legacy USB Support」が「Enabled」になっていることを確認
 
 この状態でBIOSの設定を保存して、Bootの順番で作成したUSBを選択  
 WindowsでUSBを作成した場合は起動後そのままプロンプトになるが、LinuxでUSBを作成した場合はFreeDOSのインストーラが立ち上がって、言語の選択を促されるので、Englishを選択したのち、インストールを続けるかどうかのメッセージが出るので、「No」を選択してDOSの画面に戻る
 
-LinuxでBootable USBを起動した場合
-
+LinuxでBootable USBを起動した場合  
 インストーラがまず起動し、言語の選択
 ![Installer](img/01.jpg)
 
